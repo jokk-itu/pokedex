@@ -3,7 +3,7 @@ import { Pokemon } from '../classes/Pokemon';
 
 export const pokemon = writable([]);
 
-async function fetchPokemon() {
+async function fetchPokemon() : Promise<void> {
 	const url = 'https://pokeapi.co/api/v2/pokemon?limit=150';
 	const res = await fetch(url);
 	const data = await res.json();
@@ -12,4 +12,5 @@ async function fetchPokemon() {
 	});
 	pokemon.set(results);
 }
+
 fetchPokemon();
