@@ -1,12 +1,9 @@
 # syntax=docker/dockerfile:1
-FROM node:14.18-buster-slim AS build
+FROM node:14.18-buster-slim
 WORKDIR /usr/src/app
+EXPOSE 3000
 COPY ./ ./
 RUN npm install
 RUN npm run build
-
-FROM node:14.18-buster-slim AS production
-WORKDIR /usr/src/app
-EXPOSE 3000
-COPY --from=build /usr/src/app/build/ ./
-ENTRYPOINT ["node", "index.js"]
+RUN rm -r node_modules
+ENTRYPOINT ["node", "build/index.js"]

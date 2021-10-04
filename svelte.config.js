@@ -13,7 +13,7 @@ const config = {
 		adapter: adapter({
 			out: 'build',
 			precompress: false,
-			evn: {
+			env: {
 				host: '0.0.0.0',
 				port: '3000'
 			}
