@@ -8,6 +8,15 @@
 </div>
 
 <style>
+	@font-face {
+			font-family: pokemon;
+			src: url("/PokemonHollow.ttf");
+  }
+  @font-face {
+      font-family: pokemon;
+      src: url("/PokemonSolid.ttf");
+			font-weight: bold;
+  }
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
