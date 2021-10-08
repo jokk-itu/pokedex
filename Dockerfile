@@ -2,6 +2,7 @@
 FROM node:14.18-buster-slim
 WORKDIR /usr/src/app
 EXPOSE 3000
+ENV HOST=0.0.0.0
 COPY ./ ./
 RUN npm install
 RUN npm run build
