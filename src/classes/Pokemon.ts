@@ -24,7 +24,7 @@ export class Pokemon {
 		stats? : PokeStat[]) {
 		this._id = id;
 		this._name = name;
-		this._image = '/' + id +'.png';
+		this._image = '/resources/pokemon/' + id +'.png';
 		this._moves = moves;
 		this._types = types;
 		this._weight = weight;

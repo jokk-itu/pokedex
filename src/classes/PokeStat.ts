@@ -8,4 +8,17 @@ export class PokeStat {
 		this._name = name;
 		this._url = url;
 	}
+
+
+	get stat(): number {
+		return this._stat;
+	}
+
+	get name(): string {
+		return this._name;
+	}
+
+	get url(): string {
+		return this._url;
+	}
 }

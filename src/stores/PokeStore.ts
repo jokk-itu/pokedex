@@ -14,14 +14,14 @@ export async function fetchPokemon(limit : number, offset : number) : Promise<vo
 }
 
 export async function fetchPokemonByType(typeId : number) : Promise<void> {
-	const url = 'https://pokeapi.co/api/v2/type' + typeId;
+	const url = 'https://pokeapi.co/api/v2/type/' + typeId;
 	const res = await fetch(url);
 	const data = await res.json();
-	const regex = 'https://pokeapi.co/api/v2/pokemon/(?<Id>[0-9]+)/';
-	const results = data.pokemon.map(pokemon => {
-		const match = pokemon.url.match(regex);
-		const id = match.groups.Id;
-		return new Pokemon(id ,pokemon.name);
+	const regex = new RegExp('https:\\/\\/pokeapi\\.co\\/api\\/v2\\/pokemon\\/(?<Id>[0-9]+)\\/?');
+	const results = data.pokemon.map(p => {
+		const match = regex.exec(p.pokemon.url);
+		const id = parseInt(match.groups.Id);
+		return new Pokemon(id ,p.pokemon.name);
 	});
 	pokemon.set(results);
 }

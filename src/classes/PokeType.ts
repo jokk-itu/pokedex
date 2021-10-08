@@ -8,4 +8,17 @@ export class PokeType {
 		this._name = name;
 		this._url = url;
 	}
+
+
+	get id(): number {
+		return this._id;
+	}
+
+	get name(): string {
+		return this._name;
+	}
+
+	get url(): string {
+		return this._url;
+	}
 }
