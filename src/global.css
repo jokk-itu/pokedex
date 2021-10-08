@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: pokemon;
+    /*noinspection CssUnknownTarget*/
+    src: url("/resources/fonts/PokemonHollow.ttf");
+}
+@font-face {
+    font-family: pokemon;
+    /*noinspection CssUnknownTarget*/
+    src: url("/resources/fonts/PokemonSolid.ttf");
+    font-weight: bold;
+}
+
+:root,
+.root,
+#root,
+#docs-root {
+    --bug: #426b39;
+    --dark: #525252;
+    --dragon: #7b63e7;
+    --electric: #ffc631;
+    --fairy: #f7b5f7;
+    --fighting: #a55239;
+    --fire: #f75231;
+    --flying: #425294;
+    --ghost: #6363b5;
+    --grass: #7bce52;
+    --ground: #735218;
+    --ice: #5acee7;
+    --normal: #ada594;
+    --poison: #4a3952;
+    --psychic: #6b3939;
+    --rock: #735218;
+    --steel: #adadc6;
+    --water: #399cff;
+}
