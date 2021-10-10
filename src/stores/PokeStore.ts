@@ -21,7 +21,7 @@ export async function fetchPokemonByType(typeId : number) : Promise<void> {
 	const results = data.pokemon.map(p => {
 		const match = regex.exec(p.pokemon.url);
 		const id = parseInt(match.groups.Id);
-		return new Pokemon(id ,p.pokemon.name);
+		return new Pokemon(id, p.pokemon.name);
 	});
 	pokemon.set(results);
 }
