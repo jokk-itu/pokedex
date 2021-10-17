@@ -15,7 +15,12 @@ You could use the .php script provided in the root of the project.<br>
 If that does not suit you, then download them otherwise through the 
 URL in the script</p><br><br>
 Then run to quickly serve the app:
-      npm run dev
+
+```
+npm run dev
+```
+
+
 
 
 
