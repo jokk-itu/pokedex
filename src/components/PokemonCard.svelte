@@ -1,18 +1,14 @@
 <script lang='ts'>
 	import { Pokemon } from '../classes/Pokemon';
+	import Title from './PokemonCard/Title.svelte';
+	import Frame from './PokemonCard/Frame.svelte';
+	import ThumbFrame from './PokemonCard/ThumbFrame.svelte';
+	import Infobar from './PokemonCard/Infobar.svelte';
 	export let pokemon : Pokemon = new Pokemon(1, 'bulbasaur');
 
 	let type = pokemon.types[0];
 	let hp = pokemon.stats.find(stat => stat.name === 'hp');
 	let moves = pokemon.moves.slice(Math.floor(Math.random() * (pokemon.moves.length - 2)), 2);
-
-	async function fetchPokemonSpecies() : Promise<string> {
-		const url = 'https://pokeapi.co/api/v2/pokemon-species/' + pokemon.id;
-		const res = await fetch(url);
-		const data = await res.json();
-		const evolveChain = data.evolves_from_species;
-		return evolveChain == null ? null : evolveChain.name;
-	}
 
 	async function fetchPokemonAbility(url : string) {
 		const res = await fetch(url);
@@ -33,29 +29,14 @@
 <div class='grid-cols-1 rounded-2xl border-8 border-yellow-300 bg-{type}'>
 	<hr class='py-5'>
 	<div class='flex-1'>
-		<p class='uppercase'>{pokemon.name}</p>
-		<p class=''>HP <span class='text-red-600'>{hp.stat}</span></p>
-		{#each pokemon.types as t}
-			<img class='w-8 h-8' src={'/resources/types/' + t.name + '_icon.png'} alt='type'>
-		{/each}
+		<Title pokemon={pokemon}/>
 	</div>
 	<div class='flex'>
-		<div class='text-center bg-gray-400'>
-			{#await fetchPokemonSpecies() then pokemon_species}
-				{#if pokemon_species === null}
-					<p>Basic</p>
-				{:else}
-					<p>{pokemon_species}</p>
-					<img src='/resources/pokemon/{pokemon.id-1}.png' alt='evolve_chain'>
-				{/if}
-			{/await}
-		</div>
-		<img src={pokemon.image} alt={pokemon.name}>
+		<ThumbFrame />
+		<Frame pokemon={pokemon}/>
 	</div>
 	<div class='flex'>
-		<p>{pokemon.xp}</p>
-		<p>{pokemon.height}</p>
-		<p>{pokemon.weight}</p>
+		<Infobar />
 	</div>
 	<div class='flex'>
 		{#each pokemon.abilities as ability}

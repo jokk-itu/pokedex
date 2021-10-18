@@ -93,4 +93,8 @@ export class Pokemon {
 			data.stats.map(stat => new PokeStat(stat.base_stat, stat.stat.name, stat.stat.url)),
 			data.abilities.map(ability => new PokeAbility(ability.ability.name, ability.ability.url)));
 	}
+
+	static defaultInstance() : Pokemon {
+		return new Pokemon(1,'bulbasaur');
+	}
 }
