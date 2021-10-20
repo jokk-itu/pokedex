@@ -1,12 +1,14 @@
 <script context='module'>
 	import { pokemon } from '../PokemonCard.svelte';
 
-	const url = 'https://pokeapi.co/api/v2/pokemon-species/' + pokemon.id;
-	const res = await fetch(url);
-	const data = await res.json();
-	const evolveChain = data.evolves_from_species;
-	const name = evolveChain === null ? null : evolveChain.name;
-	export { name };
+	/*export async function preload() {
+		const url = 'https://pokeapi.co/api/v2/pokemon-species/' + pokemon.id;
+		const res = await fetch(url);
+		const data = await res.json();
+		const evolveChain = data.evolves_from_species;
+		const name = evolveChain === null ? null : evolveChain.name;
+		return { name };
+	}*/
 </script>
 
 <script lang='ts'>

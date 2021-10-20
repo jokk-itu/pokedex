@@ -11,8 +11,8 @@
 	}
 </style>
 
-<div class='grid-cols-1 py-4'>
-	{#await Pokemon.instance(id) }
+<div class='grid-cols-1 py-4 m-0'>
+	{#await Pokemon.instance(id)}
 		<svg class='animate-spin h-5 w-5' viewBox='0 0 24 24'></svg>
 	{:then pokemon}
 		<PokemonCard pokemon={pokemon} />
