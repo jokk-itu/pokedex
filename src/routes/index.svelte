@@ -27,7 +27,11 @@
 	<GenerationFilter text='1.gen' limit={151} offset={0}/>
 	<GenerationFilter text='2.gen' limit={100} offset={151}/>
 	<GenerationFilter text='3.gen' limit={135} offset={251}/>
-	<GenerationFilter text='4.gen' limit={106} offset={386}/>
+	<GenerationFilter text='4.gen' limit={107} offset={386}/>
+	<GenerationFilter text='5.gen' limit={155} offset={493}/>
+	<GenerationFilter text='6.gen' limit={71} offset={649}/>
+	<GenerationFilter text='7.gen' limit={87} offset={721}/>
+	<GenerationFilter text='8.gen' limit={88} offset={809}/>
 </div>
 
 <hr>

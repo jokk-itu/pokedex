@@ -18,7 +18,7 @@ The api can be located at [api](https://pokeapi.co/)
 First off, the images won't be displayed if not downloaded.<br>
 You could use the .php script provided in the root of the project.<br>
 If that does not suit you, then download them otherwise through the 
-URL in the script
+URL in the script. All of the images are supposed to be in static/resources/pokemon/
 <br><br>
 Then run the following command to quickly serve the app:
 
