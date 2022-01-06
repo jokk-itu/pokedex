@@ -25,7 +25,7 @@
 
 <div class='gap-4 grid my-14 lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
 	<GenerationFilter text='1.gen' limit={151} offset={0}/>
-	<GenerationFilter text='2.gen' limit={99} offset={151}/>
+	<GenerationFilter text='2.gen' limit={100} offset={151}/>
 	<GenerationFilter text='3.gen' limit={135} offset={251}/>
 	<GenerationFilter text='4.gen' limit={106} offset={386}/>
 </div>

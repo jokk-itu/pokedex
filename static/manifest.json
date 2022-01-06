@@ -7,6 +7,11 @@
         "src": "pokeball_144x144.png",
         "type": "image/png",
         "sizes": "144x144"
+      },
+      {
+        "src": "pokeball_256x256.png",
+        "type": "image/png",
+        "sizes": "256x256"
       }
     ],
     "background_color": "#3367D6",

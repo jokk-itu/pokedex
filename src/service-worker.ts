@@ -9,7 +9,6 @@ const to_cache = build.concat(files);
 const staticAssets = new Set(to_cache);
 
 worker.addEventListener('install', (event) => {
-	console.log('installed');
 	event.waitUntil(
 		caches
 			.open(FILES)
@@ -21,7 +20,6 @@ worker.addEventListener('install', (event) => {
 });
 
 worker.addEventListener('activate', (event) => {
-	console.log('activated');
 	event.waitUntil(
 		caches.keys().then(async (keys) => {
 			// delete old caches
@@ -57,8 +55,6 @@ async function fetchAndCache(request: Request) {
 worker.addEventListener('fetch', (event) => {
 	if (event.request.method !== 'GET') 
 		return;
-
-	console.log('fetch: ' + event.request);
 
 	event.respondWith(
 		(async () => {

@@ -1,7 +1,7 @@
 # Pokedex
 
 
-This project has been created to test out svelte and tailwind.
+This project has been created to test out svelte, tailwind and progressive web app development.
 The pokemon api has been used to show data. 
 The api can be located at [api](https://pokeapi.co/)
 
@@ -26,8 +26,11 @@ Then run the following command to quickly serve the app:
 npm run dev
 ```
 
+Or by building it as production ready:
+
+```
+npm run build
+npm run preview
+```
+
 Afterwards the app can be seen at [app](http://localhost:3000)
-
-
-
-

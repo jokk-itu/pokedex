@@ -5,7 +5,14 @@
 
 	export let pokemon : Pokemon = new Pokemon(1, 'bulbasaur');
 
-	let type = pokemon.types[0].name;
+	let background = 'bg-' + pokemon.types[0].name;
+
+	let style = '';
+
+	if(pokemon.types.length > 1)
+	{
+		style = 'background: linear-gradient(110deg, var(--'+pokemon.types[0].name+') 30%, var(--'+pokemon.types[1].name+') 70%)';
+	}
 </script>
 
 <style lang='scss'>
@@ -19,7 +26,7 @@
 	}
 </style>
 
-<div class='rounded-2xl border-8 border-yellow-300 bg-{type} pokemoncard'>
+<div class='rounded-2xl border-8 border-yellow-300 {background} pokemoncard' style={style}>
 	<hr class='py-5'>
 	<div class='flex justify-content-end'>
 		<Title pokemon={pokemon}/>
